@@ -24,6 +24,11 @@ def add_task(Tasks,keys,task_description):
     Tasks[key] = task_description
     return Tasks, keys
 
+def update_tasks(Tasks,keys):
+    """Updates keys of the dictionary after task is removed"""
+    starting_key = key_gen(keys)
+    new_tasks = {starting_key+i:value for i,value in enumerate(Tasks.values())}
+    return new_tasks
 
 
 
