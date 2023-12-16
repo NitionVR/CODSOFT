@@ -44,6 +44,14 @@ def get_tasks_description():
     return task_desc
 
 
+def edit_task(Tasks,key):
+    "Edits the task"
+    print("Please re-enter the entire task description for now.")
+    new_desc = get_tasks_description()
+    Tasks.update({key:new_desc})
+    return Tasks
+
+
 
 
 
