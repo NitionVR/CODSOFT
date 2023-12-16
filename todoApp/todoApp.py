@@ -52,6 +52,41 @@ def edit_task(Tasks,key):
     return Tasks
 
 
+def main():
+    Tasks = dict()
+    keys = []
+    while True:
+        show_tasks(Tasks)
+        print("1. Add task")
+        print("2. Edit task ")
+        print("3. Remove task")
+        print("4. Exit")
+        choice = input("> ").strip()
+
+        if choice == '1':
+            task_description = get_tasks_description()
+            Tasks, keys = add_task(Tasks,keys,task_description)
+            show_tasks(Tasks)
+            print("\n")
+        elif choice == '2':
+            index = int(input("Enter task number: "))
+            Tasks = edit_task(Tasks,index)
+            show_tasks(Tasks)
+            print("\n")
+
+        elif choice == '3':
+            index = int(input("Enter task number: "))
+            Tasks,keys = remove_task(Tasks,index,keys)
+            show_tasks(Tasks)
+            print("\n")
+
+        elif choice == '4':
+            print("Exiting to-do app. Bye!")
+            break
+
+
+if __name__ == "__main__":
+    main()
 
 
 
