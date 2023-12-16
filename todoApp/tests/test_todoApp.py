@@ -26,6 +26,12 @@ class MyTestCase(unittest.TestCase):
         result = todoApp.update_tasks(tasks,{})
         self.assertEqual(result,{1:"Build a to-do application", 2: "Turn it into an API"})
 
+    def test_remove_tasks(self):
+        tasks = {1:"Build a to-do application", 2: "Turn it into an API"}
+        result,keys = todoApp.remove_task(tasks,1,[1,2])
+        self.assertEqual(result,{1: "Turn it into an API"})
 
+
+        
 if __name__ == "__main__":
     unittest.main()
