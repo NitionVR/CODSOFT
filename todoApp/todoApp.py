@@ -38,6 +38,12 @@ def remove_task(Tasks,key,keys):
     return update_tasks(Tasks,keys),keys
     
 
+def get_tasks_description():
+    """Asks the user to enter task description"""
+    task_desc = input("Enter task description: ")
+    return task_desc
+
+
 
 
 
