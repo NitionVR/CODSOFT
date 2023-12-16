@@ -31,6 +31,13 @@ def update_tasks(Tasks,keys):
     return new_tasks
 
 
+def remove_task(Tasks,key,keys):
+    """Removes the specified task"""
+    Tasks.pop(key)
+    keys.remove(key)
+    return update_tasks(Tasks,keys),keys
+    
+
 
 
 
