@@ -18,6 +18,12 @@ def key_gen(keys):
     return key
 
 
+def add_task(Tasks,keys,task_description):
+    key = key_gen(keys)
+    keys.append(key)
+    Tasks[key] = task_description
+    return Tasks, keys
+
 
 
 
