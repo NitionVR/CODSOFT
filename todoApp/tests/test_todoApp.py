@@ -36,7 +36,11 @@ class MyTestCase(unittest.TestCase):
             result = todoApp.get_tasks_description()
         self.assertEqual(result,"Build a to-do application")
 
-
+    def test_edit_task(self):
+        with captured_io(StringIO("Build a to-do application\n")) as (out,err):
+            result = todoApp.edit_task({1:"Build ato-doapplication", 2: "Turn it into an API"}\
+                                   ,1)
+        self.assertEqual(result,{1:"Build a to-do application", 2: "Turn it into an API"})
         
 if __name__ == "__main__":
     unittest.main()
