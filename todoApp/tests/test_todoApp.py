@@ -31,6 +31,11 @@ class MyTestCase(unittest.TestCase):
         result,keys = todoApp.remove_task(tasks,1,[1,2])
         self.assertEqual(result,{1: "Turn it into an API"})
 
+    def test_get_tasks_description(self):
+        with captured_io(StringIO("Build a to-do application\n")) as (out,err):
+            result = todoApp.get_tasks_description()
+        self.assertEqual(result,"Build a to-do application")
+
 
         
 if __name__ == "__main__":
